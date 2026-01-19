@@ -28,5 +28,39 @@ module.exports = {
         icon: `src/images/icon.png`,
       },
     },
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        output: '/',
+        excludes: [],
+        query: `
+          {
+            site {
+              siteMetadata {
+                siteUrl
+              }
+            }
+            allSitePage {
+              nodes {
+                path
+              }
+            }
+          }
+        `,
+        resolveSiteUrl: () => 'https://nagababu.medisetti.in',
+        resolvePages: ({ allSitePage: { nodes: allPages } }) => {
+          return allPages.map(page => {
+            return { ...page }
+          })
+        },
+        serialize: ({ path }) => {
+          return {
+            url: path,
+            changefreq: 'weekly',
+            priority: path === '/' ? 1.0 : 0.8,
+          }
+        },
+      },
+    },
   ],
 }

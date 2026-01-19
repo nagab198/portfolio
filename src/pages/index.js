@@ -363,7 +363,7 @@ const IndexPage = () => {
                         <h2 className="section-title">Professional Credentials</h2>
                     </div>
                     <div className="cert-grid">
-                        <a href="https://www.credly.com/earner/earned/badge/5502ee43-7480-4d1a-8c17-264fbfe8d33a" target="_blank" rel="noopener noreferrer" className="cert-card animate-fade-up">
+                        <a href="https://www.credly.com/badges/5502ee43-7480-4d1a-8c17-264fbfe8d33a" target="_blank" rel="noopener noreferrer" className="cert-card animate-fade-up">
                             <div className="cert-badge"><FaAws /></div>
                             <div className="cert-info">
                                 <h4>AWS Certified Developer - Associate</h4>
